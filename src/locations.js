@@ -12,7 +12,7 @@ const polygonCoordinatesAitAmira = [
   export const polygonEntityAitAmira = new Entity({
     polygon: new PolygonGraphics({
       hierarchy: polygonCoordinatesAitAmira,
-      material: Color.RED.withAlpha(0.5),
+      material: Color.RED.withAlpha(0.4),
     }),
   });
 
@@ -36,6 +36,20 @@ const polygonCoordinatesAitAmira = [
   export const polygonEntityFerkes = new Entity({
     polygon: new PolygonGraphics({
       hierarchy: polygonCoordinatesFerkes,
-      material: Color.RED.withAlpha(0.5),
+      material: Color.RED.withAlpha(0.4),
+    }),
+  });
+
+  const polygonCoordinatesPeru = [
+    Cartesian3.fromDegrees(-79.924710, -6.103525),
+    Cartesian3.fromDegrees(-79.924284, -6.104134),
+    Cartesian3.fromDegrees(-79.922369, -6.102769),
+    Cartesian3.fromDegrees(-79.922377, -6.101845),
+  ];
+
+  export const polygonEntityPeru = new Entity({
+    polygon: new PolygonGraphics({
+      hierarchy: polygonCoordinatesPeru,
+      material: Color.RED.withAlpha(0.4),
     }),
   });
