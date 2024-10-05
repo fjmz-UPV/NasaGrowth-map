@@ -14,6 +14,7 @@ const viewer = new Viewer("cesiumContainer", {
 });
 
 // Fly the camera to San Francisco at the given longitude, latitude, and height.
+/*
 viewer.camera.flyTo({
   destination: Cartesian3.fromDegrees(-122.4175, 37.655, 400),
   orientation: {
@@ -21,6 +22,7 @@ viewer.camera.flyTo({
     pitch: CesiumMath.toRadians(-15.0),
   },
 });
+*/
 
 // Add Cesium OSM Buildings, a global 3D buildings layer.
 createOsmBuildingsAsync().then((buildingTileset) => {
