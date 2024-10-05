@@ -2,8 +2,7 @@ import {
   Cartesian3,
   Math as CesiumMath,
   Terrain,
-  Viewer,
-  ModelGraphics
+  Viewer
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "./style.css";
@@ -15,7 +14,7 @@ const viewer = new Viewer("cesiumContainer", {
 });
 
 // Fly the camera to XXXXX at the given longitude, latitude, and height.
-const flyToFirstPoint = () => {
+const flyToAitAmira = () => {
 viewer.camera.flyTo({
   destination: Cartesian3.fromDegrees(-9.433781, 30.143166, 2000),
   orientation: {
@@ -26,7 +25,7 @@ viewer.camera.flyTo({
 };
 
 // Fly the camera to the second point
-const flyToSecondPoint = () => {
+const flyToFerkes = () => {
   viewer.camera.flyTo({
     destination: Cartesian3.fromDegrees(-5.131704, 9.641149, 2000),
     orientation: {
@@ -36,7 +35,7 @@ const flyToSecondPoint = () => {
   });
 };
 
-const flyToThirdPoint = () => {
+const flyToPeru = () => {
   viewer.camera.flyTo({
     destination: Cartesian3.fromDegrees(-79.922369, -6.102769, 2000),
     orientation: {
@@ -46,7 +45,7 @@ const flyToThirdPoint = () => {
   });
 }
 
-const flyToFourthPoint = () => {
+const flyToThai = () => {
   viewer.camera.flyTo({
     destination: Cartesian3.fromDegrees(101.328928, 15.135729, 2000),
     orientation: {
@@ -81,12 +80,12 @@ viewer.scene.postRender.addEventListener(rotateEarth);
 
 setTimeout(() => {
   stopRotatingEarth();
-  flyToFirstPoint();
+  flyToThai();
   setTimeout(() => {
-    flyToSecondPoint();
+    flyToPeru();
     setTimeout(() => {
-      flyToThirdPoint();
-      setTimeout(flyToFourthPoint, 5000);
+      flyToAitAmira();
+      setTimeout(flyToFerkes, 5000);
     }, 5000);
   }, 5000);
 }, 8000);
