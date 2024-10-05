@@ -7,7 +7,7 @@ import {
 } from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "./style.css";
-import { polygonEntityAitAmira, polygonEntityFerkes, polygonEntityPeru } from "./locations";
+import { polygonEntityAitAmira, polygonEntityFerkes, polygonEntityPeru, polygonEntityThailand } from "./locations";
 
 // Initialize the Cesium Viewer in the HTML element with the `cesiumContainer` ID.
 const viewer = new Viewer("cesiumContainer", {
@@ -46,6 +46,16 @@ const flyToThirdPoint = () => {
   });
 }
 
+const flyToFourthPoint = () => {
+  viewer.camera.flyTo({
+    destination: Cartesian3.fromDegrees(101.328928, 15.135729, 2000),
+    orientation: {
+      heading: CesiumMath.toRadians(0.01),
+      pitch: CesiumMath.toRadians(-90.0),
+    },
+  });
+}
+
 // Function to rotate the Earth
 const rotateEarth = () => {
   const currentTime = viewer.clock.currentTime;
@@ -64,6 +74,7 @@ const stopRotatingEarth = () => {
 viewer.entities.add(polygonEntityAitAmira);
 viewer.entities.add(polygonEntityFerkes);
 viewer.entities.add(polygonEntityPeru);
+viewer.entities.add(polygonEntityThailand);
 
 // Add the rotateEarth function to the postRender event
 viewer.scene.postRender.addEventListener(rotateEarth);
@@ -73,6 +84,9 @@ setTimeout(() => {
   flyToFirstPoint();
   setTimeout(() => {
     flyToSecondPoint();
-    setTimeout(flyToThirdPoint, 5000);
+    setTimeout(() => {
+      flyToThirdPoint();
+      setTimeout(flyToFourthPoint, 5000);
+    }, 5000);
   }, 5000);
 }, 8000);
