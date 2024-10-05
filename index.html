@@ -2,9 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <style>
+      #floatingLogo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 100px;
+        z-index: 1000;
+      }
+    </style>
   </head>
   <body>
     <div id="cesiumContainer"></div>
+    <img id="floatingLogo" src="./assets/Logo_nasagrowth.png" alt="Logo" />
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
