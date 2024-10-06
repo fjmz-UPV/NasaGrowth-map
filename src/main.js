@@ -85,7 +85,7 @@ setTimeout(() => {
     flyToPeru();
     setTimeout(() => {
       flyToAitAmira();
-      setTimeout(flyToFerkes, 5000);
-    }, 5000);
-  }, 5000);
+      setTimeout(flyToFerkes, 6000);
+    }, 6000);
+  }, 6000);
 }, 8000);
